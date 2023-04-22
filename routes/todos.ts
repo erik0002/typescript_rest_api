@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { Todo } from "../models/todo";
+import { log } from "console";
 
 let todos: Todo[] = [];
 
@@ -10,6 +11,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/todo", (req, res, next) => {
+    console.log(req)
   const newTodo: Todo = {
     id: new Date().toISOString(),
     text: req.body.text,
